@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Vendas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header, main, section, footer {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #eee;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        h4 {
+            font-size: 17px;
+            font-weight: bold;
+            color: #524f4f;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .testimonial {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .testimonial p:first-child {
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .video {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .cta {
+            text-align: center;
+        }
+
+        .cta-bottom {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Título da Oferta</h1>
+        <h4>Subtítulo da Oferta</h4>
+    </header>
+
+    <main>
+        <section class="video">
+            <div class="video-container">
+                <video id="salesVideo" src="VELOZES E FURIOSOS 10 _ Trailer Oficial (Universal Studios) - HD.mp4" controls autoplay muted></video>
+            </div>
+        </section>
+
+        <section class="content hidden" id="contentAfterVideo">
+            <h2>Benefícios do Produto</h2>
+            <ul>
+                <li>Benefício 1</li>
+                <li>Benefício 2</li>
+                <li>Benefício 3</li>
+                <li>Benefício 4</li>
+            </ul>
+
+            <h2>Depoimentos</h2>
+            <div class="testimonial">
+                <p>"Depoimento 1"</p>
+                <p>- Nome do Cliente 1</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 2"</p>
+                <p>- Nome do Cliente 2</p>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Adquira Agora!</h2>
+            <p>Descrição da oferta e chamada para ação.</p>
+            <a id="buyButtonLarge" href="" class="button">Já quero comprar agora!</a>
+        </section>
+    </main>
+
+    <section class="cta-bottom hidden">
+        <h2>Adquira Agora!</h2>
+        <p>Descrição da oferta e chamada para ação.</p>
+        <a id="buyButtonBottom" href="" class="button">Comprar</a>
+    </section>
+
+    <footer>
+        <p>Todos os direitos reservados &copy; 2023</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const salesVideo = document.getElementById('salesVideo');
+    const contentAfterVideo = document.getElementById('contentAfterVideo');
+    const buyButtonLarge = document.getElementById('buyButtonLarge');
+    const buyButtonBottom = document.getElementById('buyButtonBottom');
+
+    salesVideo.addEventListener('ended', function() {
+        contentAfterVideo.classList.remove('hidden');
+        buyButtonLarge.classList.remove('hidden');
+        buyButtonBottom.classList.remove('hidden');
+    });
+});
+    </script>
+</body>
+
+</html>
