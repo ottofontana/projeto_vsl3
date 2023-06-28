@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Vendas</title>
     <style>
         * {
@@ -18,16 +19,14 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #f2f2f2;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             line-height: 1.5;
-            min-height: 100vh;
             text-align: center;
         }
 
-        header, main, section, footer {
+        header,
+        main,
+        section,
+        footer {
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
@@ -45,7 +44,7 @@
         h4 {
             font-size: 17px;
             font-weight: bold;
-            color: #524f4f;
+            color: #5f5d5d;
         }
 
         .content h2 {
@@ -86,6 +85,7 @@
             padding-bottom: 56.25%;
             overflow: hidden;
             margin: 0 auto;
+            max-width: 100%;
         }
 
         .video-container video {
@@ -97,6 +97,7 @@
         }
 
         .button {
+            margin-top: 20px;
             display: inline-block;
             padding: 15px 30px;
             background-color: #007bff;
@@ -130,6 +131,54 @@
         .footer p {
             font-size: 14px;
             color: #777;
+        }
+
+        @media screen and (max-width: 768px) {
+            body,
+            header,
+            main,
+            section,
+            footer {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 14px;
+            }
+
+            .content h2 {
+                margin-top: 15px;
+                font-size: 20px;
+            }
+
+            .content ul {
+                margin-left: 15px;
+                margin-bottom: 15px;
+            }
+
+            .testimonial {
+                padding: 10px;
+            }
+
+            .testimonial p:first-child {
+                margin-bottom: 5px;
+            }
+
+            .video-container {
+                padding-bottom: 56.25%;
+            }
+
+            .button {
+                padding: 10px 20px;
+            }
+
+            .footer p {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -185,18 +234,18 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    const salesVideo = document.getElementById('salesVideo');
-    const contentAfterVideo = document.getElementById('contentAfterVideo');
-    const buyButtonLarge = document.getElementById('buyButtonLarge');
-    const buyButtonBottom = document.getElementById('buyButtonBottom');
+        document.addEventListener("DOMContentLoaded", function () {
+            const salesVideo = document.getElementById('salesVideo');
+            const contentAfterVideo = document.getElementById('contentAfterVideo');
+            const buyButtonLarge = document.getElementById('buyButtonLarge');
+            const buyButtonBottom = document.getElementById('buyButtonBottom');
 
-    salesVideo.addEventListener('ended', function() {
-        contentAfterVideo.classList.remove('hidden');
-        buyButtonLarge.classList.remove('hidden');
-        buyButtonBottom.classList.remove('hidden');
-    });
-});
+            salesVideo.addEventListener('ended', function () {
+                contentAfterVideo.classList.remove('hidden');
+                buyButtonLarge.classList.remove('hidden');
+                buyButtonBottom.classList.remove('hidden');
+            });
+        });
     </script>
 </body>
 
