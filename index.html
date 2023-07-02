@@ -73,7 +73,12 @@
         }
 
         .hidden {
-            display: none;
+            opacity: 0;
+        }
+
+        .visible {
+            opacity: 1;
+            transition: opacity 1s ease-in;
         }
 
         .video {
@@ -133,58 +138,58 @@
         }
 
         .faq-section {
-  text-align: center;
-  background-color: #f2f2f2;
-  padding: 40px 0;
-}
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px 0;
+        }
 
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.faq {
-  background-color: #eee;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-}
+        .faq {
+            background-color: #eee;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
 
-.question {
-  padding: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  color: #333;
-}
+        .question {
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
 
-.answer {
-  padding: 20px;
-  display: none;
-}
+        .answer {
+            padding: 20px;
+            display: none;
+        }
 
-.faq.active .answer {
-  display: block;
-}
+        .faq.active .answer {
+            display: block;
+        }
 
-.faq.active .question {
-  background-color: #ddd;
-}
+        .faq.active .question {
+            background-color: #ddd;
+        }
 
-.faq .question::after {
-  content: "+";
-  float: right;
-  font-weight: bold;
-  transition: transform 0.3s;
-}
+        .faq .question::after {
+            content: "+";
+            float: right;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
 
-.faq.active .question::after {
-  transform: rotate(45deg);
-}
+        .faq.active .question::after {
+            transform: rotate(45deg);
+        }
 
-.faq:hover .question::after {
-  color: #007bff;
-}
+        .faq:hover .question::after {
+            color: #007bff;
+        }
 
         @media screen and (max-width: 768px) {
             body,
@@ -273,59 +278,51 @@
                 <p>"Depoimento 2"</p>
                 <p>- Nome do Cliente 2</p>
             </div>
-        </section>
 
-        <section class="faq-section hidden" id="questionsAfterVideo">
             <h2>Perguntas Frequentes</h2>
             <div class="faq-container">
-              <div class="faq">
-                <div class="question">Pergunta 1</div>
-                <div class="answer">Resposta 1</div>
-              </div>
-              <div class="faq">
-                <div class="question">Pergunta 2</div>
-                <div class="answer">Resposta 2</div>
-              </div>
-              <div class="faq">
-                <div class="question">Pergunta 3</div>
-                <div class="answer">Resposta 3</div>
-              </div>
+                <div class="faq">
+                    <div class="question">Pergunta 1?</div>
+                    <div class="answer">Resposta 1!</div>
+                </div>
+                <div class="faq">
+                    <div class="question">Pergunta 2?</div>
+                    <div class="answer">Resposta 2!</div>
+                </div>
+                <div class="faq">
+                    <div class="question">Pergunta 3?</div>
+                    <div class="answer">Resposta 3!</div>
+                </div>
             </div>
-          </section>
+
+            <div class="cta-bottom">
+                <a id="buyButtonSmall" href="" class="button">Comprar Agora!</a>
+            </div>
+        </section>
     </main>
 
-    <section class="cta-bottom hidden" id="ctaBottomAfterVideo">
-        <h2>Adquira Agora!</h2>
-        <a id="buyButtonBottom" href="" class="button">Comprar</a>
-    </section>
-
-    <footer>
-        <p>Todos os direitos reservados &copy; 2023</p>
+    <footer class="footer">
+        <p>© 2023 Nome da Empresa. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const salesVideo = document.getElementById('salesVideo');
-            const contentAfterVideo = document.getElementById('contentAfterVideo');
-            const ctaAfterVideo = document.getElementById('ctaAfterVideo');
-            const ctaBottomAfterVideo = document.getElementById('ctaBottomAfterVideo');
-            const questionsAfterVideo = document.getElementById('questionsAfterVideo');
+        // Função para exibir elementos após o término do vídeo
+        function showElementsAfterVideo() {
+            const video = document.getElementById('salesVideo');
+            const ctaSection = document.getElementById('ctaAfterVideo');
+            const contentSection = document.getElementById('contentAfterVideo');
 
-            salesVideo.addEventListener('ended', function () {
-                contentAfterVideo.classList.remove('hidden');
-                ctaAfterVideo.classList.remove('hidden');
-                ctaBottomAfterVideo.classList.remove('hidden');
-                questionsAfterVideo.classList.remove('hidden');
+            video.addEventListener('ended', function() {
+                // Exibir os elementos escondidos
+                ctaSection.classList.remove('hidden');
+                contentSection.classList.remove('hidden');
+                // Adicionar classe para animação fade-in
+                ctaSection.classList.add('visible');
+                contentSection.classList.add('visible');
             });
+        }
 
-            const faqItems = document.querySelectorAll('.faq');
-            faqItems.forEach(function (faq) {
-                const question = faq.querySelector('.question');
-                question.addEventListener('click', function () {
-                    faq.classList.toggle('active');
-                });
-            });
-        });
+        showElementsAfterVideo();
     </script>
 </body>
 
