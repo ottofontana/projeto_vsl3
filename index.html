@@ -1,13 +1,243 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Vendas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        header,
+        main,
+        section,
+        footer {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #eee;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        h4 {
+            font-size: 17px;
+            font-weight: bold;
+            color: #5f5d5d;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .testimonial {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .testimonial p:first-child {
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .video {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .cta {
+            text-align: center;
+        }
+
+        .cta-bottom {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .faq-section {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq {
+            background-color: #eee;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .question {
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .answer {
+            padding: 20px;
+            display: none;
+        }
+
+        .faq.active .answer {
+            display: block;
+        }
+
+        .faq.active .question {
+            background-color: #ddd;
+        }
+
+        .faq .question::after {
+            content: "+";
+            float: right;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .faq.active .question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq:hover .question::after {
+            color: #007bff;
+        }
+
+        @media screen and (max-width: 768px) {
+            body,
+            header,
+            main,
+            section,
+            footer {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 14px;
+            }
+
+            .content h2 {
+                margin-top: 15px;
+                font-size: 20px;
+            }
+
+            .content ul {
+                margin-left: 15px;
+                margin-bottom: 15px;
+            }
+
+            .testimonial {
+                padding: 10px;
+            }
+
+            .testimonial p:first-child {
+                margin-bottom: 5px;
+            }
+
+            .video-container {
+                padding-bottom: 56.25%;
+            }
+
+            .button {
+                padding: 10px 20px;
+            }
+
+            .footer p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
         <h1>Título da Oferta</h1>
@@ -27,42 +257,44 @@
             <a id="buyButtonLarge" href="" class="button">Já quero comprar agora!</a>
         </section>
 
-        <section class="content hidden" id="contentAfterVideo">
-            <h2>Benefícios do Produto</h2>
+        <section class="content vsl-section hidden" id="contentAfterVideo">
+            <h2 class="benefits">Benefícios do Produto</h2>
             <ul>
                 <li>Benefício 1</li>
                 <li>Benefício 2</li>
                 <li>Benefício 3</li>
                 <li>Benefício 4</li>
             </ul>
+            </section>
 
-            <h2>Depoimentos</h2>
-            <div class="testimonial">
+            <section class="content vsl-section hidden" id="contentAfterVideo2">
+            <div class="testimonial hidden">
+                <h2>Depoimentos</h2>
                 <p>"Depoimento 1"</p>
                 <p>- Nome do Cliente 1</p>
             </div>
-            <div class="testimonial">
+            <div class="testimonial hidden">
                 <p>"Depoimento 2"</p>
                 <p>- Nome do Cliente 2</p>
             </div>
 
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq-container">
+            <div class="faq-container hidden" id="faqSection">
+                <h2>Perguntas Frequentes</h2>
                 <div class="faq">
                     <div class="question">Pergunta 1?</div>
                     <div class="answer">Resposta 1!</div>
                 </div>
-                <div class="faq">
+                <div class="faq hidden">
                     <div class="question">Pergunta 2?</div>
                     <div class="answer">Resposta 2!</div>
                 </div>
-                <div class="faq">
+                <div class="faq hidden">
                     <div class="question">Pergunta 3?</div>
                     <div class="answer">Resposta 3!</div>
                 </div>
             </div>
 
-            <div class="cta-bottom">
+            <div class="cta-bottom hidden" id="ctaBottom">
                 <a id="buyButtonSmall" href="" class="button">Comprar Agora!</a>
             </div>
         </section>
@@ -72,7 +304,109 @@
         <p>© 2023 Nome da Empresa. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+        const salesVideo = document.getElementById('salesVideo');
+        const ctaAfterVideo = document.getElementById('ctaAfterVideo');
+        const buyButtonLarge = document.getElementById('buyButtonLarge');
+        const contentAfterVideo = document.getElementById('contentAfterVideo');
+        const contentAfterVideo2 = document.getElementById('contentAfterVideo2');
+        const faqSection = document.getElementById('faqSection');
+        const ctaBottom = document.getElementById('ctaBottom');
+        const buyButtonSmall = document.getElementById('buyButtonSmall');
 
+        const testimonials = document.querySelectorAll('.testimonial');
+        const faqs = document.querySelectorAll('.faq');
+
+        let testimonialIndex = 0;
+        let faqIndex = 0;
+
+        function showNextTestimonial() {
+            if (testimonialIndex < testimonials.length) {
+                testimonials[testimonialIndex].classList.remove('hidden');
+                testimonials[testimonialIndex].classList.add('visible');
+                testimonialIndex++;
+            }
+        }
+
+        function showNextFAQ() {
+            if (faqIndex < faqs.length) {
+                faqs[faqIndex].classList.remove('hidden');
+                faqs[faqIndex].classList.add('visible');
+                faqIndex++;
+            }
+        }
+
+        salesVideo.addEventListener('timeupdate', function () {
+            const videoDuration = salesVideo.duration;
+            const videoCurrentTime = salesVideo.currentTime;
+
+            const halfVideoTime = videoDuration / 2;
+
+            // Exibir os elementos ocultos quando atingir a metade do vídeo
+            if (videoCurrentTime >= halfVideoTime) {
+                ctaAfterVideo.classList.remove('hidden');
+                ctaAfterVideo.classList.add('visible');
+                contentAfterVideo.classList.remove('hidden');
+                contentAfterVideo.classList.add('visible');
+            }
+
+            const testimonialInterval = videoDuration / (testimonials.length + 2);
+            const currentTestimonialIndex = Math.floor(videoCurrentTime / testimonialInterval);
+
+            if (currentTestimonialIndex > testimonialIndex) {
+                showNextTestimonial();
+            }
+
+            const faqInterval = videoDuration / (faqs.length + 2);
+            const currentFaqIndex = Math.floor(videoCurrentTime / faqInterval);
+
+            if (currentFaqIndex > faqIndex) {
+                showNextFAQ();
+            }
+
+            if (videoCurrentTime >= halfVideoTime + 25) {
+                contentAfterVideo2.classList.remove('hidden');
+                contentAfterVideo2.classList.add('visible');
+            }
+
+            if (videoCurrentTime >= halfVideoTime + 50) {
+                faqSection.classList.remove('hidden');
+                faqSection.classList.add('visible');
+            }
+
+            if (videoCurrentTime >= halfVideoTime + 75) {
+                ctaBottom.classList.remove('hidden');
+                ctaBottom.classList.add('visible');
+            }
+        });
+
+        buyButtonLarge.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log('Buy button large clicked');
+        });
+
+        buyButtonSmall.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log('Buy button small clicked');
+        });
+        
+        // Função para abrir ou fechar a caixa de perguntas
+function toggleFAQ(faq) {
+    const question = faq.querySelector('.question');
+    const answer = faq.querySelector('.answer');
+
+    faq.classList.toggle('active');
+    answer.classList.toggle('visible');
+}
+
+// Adiciona o evento de clique em cada pergunta
+faqs.forEach(function (faq) {
+    const question = faq.querySelector('.question');
+
+    question.addEventListener('click', function () {
+        toggleFAQ(faq);
+    });
+});
+    </script>
+</body>
 </html>
