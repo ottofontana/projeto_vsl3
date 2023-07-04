@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Página de Vendas</title>
     <style>
         * {
@@ -72,15 +73,20 @@
         }
 
         .hidden {
-            display: none;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        }
+
+        .hidden {
+        display: none;
+        opacity: 0;
         }
 
         .visible {
-            display: block;
-        }
-
-        .video {
-            margin-bottom: 20px;
+        display: block;
+        opacity: 1;
+        transition: opacity 0.5s ease;
         }
 
         .video-container {
@@ -240,26 +246,26 @@
 </head>
 <body>
     <header>
-        <h1>Título da Oferta</h1>
-        <h4>Subtítulo da Oferta</h4>
+        <h1 class="animate__animated animate__fadeIn">Título da Oferta</h1>
+        <h4 class="animate__animated animate__fadeIn">Subtítulo da Oferta</h4>
     </header>
 
     <main>
         <section class="video">
-            <div class="video-container">
+            <div class="video-container animate__animated animate__fadeIn">
                 <video id="salesVideo" src="VELOZES E FURIOSOS 10 _ Trailer Oficial (Universal Studios) - HD.mp4" controls autoplay muted></video>
             </div>
         </section>
 
         <section class="cta" id="ctaAfterVideo">
-            <h2>Adquira Agora!</h2>
-            <p>Descrição da oferta e chamada para ação.</p>
-            <a id="buyButtonLarge" href="" class="button">Já quero comprar agora!</a>
+            <h2 class="animate__animated animate__fadeIn">Adquira Agora!</h2>
+            <p class="animate__animated animate__fadeIn">Descrição da oferta e chamada para ação.</p>
+            <a id="buyButtonLarge" href="" class="button animate__animated animate__fadeIn">Já quero comprar agora!</a>
         </section>
 
         <section class="content vsl-section hidden" id="contentAfterVideo">
-            <h2 class="benefits">Benefícios do Produto</h2>
-            <ul>
+            <h2 class="benefits animate__animated animate__fadeIn">Benefícios do Produto</h2>
+            <ul class="animate__animated animate__fadeIn">
                 <li>Benefício 1</li>
                 <li>Benefício 2</li>
                 <li>Benefício 3</li>
@@ -268,17 +274,17 @@
             </section>
 
             <section class="content vsl-section hidden" id="contentAfterVideo2">
-            <div class="testimonial hidden">
+            <div class="testimonial hidden animate__animated animate__fadeIn">
                 <h2>Depoimentos</h2>
                 <p>"Depoimento 1"</p>
                 <p>- Nome do Cliente 1</p>
             </div>
-            <div class="testimonial hidden">
+            <div class="testimonial hidden animate__animated animate__fadeIn">
                 <p>"Depoimento 2"</p>
                 <p>- Nome do Cliente 2</p>
             </div>
 
-            <div class="faq-container hidden" id="faqSection">
+            <div class="faq-container hidden animate__animated animate__fadeIn" id="faqSection">
                 <h2>Perguntas Frequentes</h2>
                 <div class="faq">
                     <div class="question">Pergunta 1?</div>
@@ -294,8 +300,8 @@
                 </div>
             </div>
 
-            <div class="cta-bottom hidden" id="ctaBottom">
-                <a id="buyButtonSmall" href="" class="button">Comprar Agora!</a>
+            <div class="cta-bottom hidden animate__animated animate__fadeIn" id="ctaBottom">
+                <a id="buyButtonSmall" href="" class="button animate__animated animate__fadeIn">Comprar Agora!</a>
             </div>
         </section>
     </main>
