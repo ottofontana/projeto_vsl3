@@ -1,418 +1,1243 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <title>Página de Vendas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<meta http-equiv="origin-trial" content="Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZyIsImV4cGlyeSI6MTcyNTQwNzk5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+<meta charset="utf-8">
+<link rel="stylesheet" href="estilo.css">
+<link rel="icon" href="/favicon.ico">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="O arrasta-e-solta ficou na Idade da Pedra. Conheça o construtor de páginas do futuro.">
+<link rel="apple-touch-icon" href="/logo192.png">
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<title>Atomicat</title>
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7WH2N1JX&amp;l=dataLayer&amp;cx=c"></script>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/3kTz7WGoZLQTivI-amNftGZO/recaptcha__pt_br.js" crossorigin="anonymous" integrity="sha384-xEgtEsMpYnrtTayg0DiKnjmL6dfX9OW6ZuN9yp9X2YmChJTBBfRHZ6Yqses0JWa4"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/2256.5494add9.chunk.css">
+<style data-styled="active" data-styled-version="5.3.5"></style><style data-emotion="css" data-s=""></style>
+<link href="blob:https://app.atomicat.com.br/b3c0531a-e1ce-4d36-ad7e-27b9a562dcfe" rel="stylesheet"></head>
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            line-height: 1.5;
-            text-align: center;
-        }
-
-        header,
-        main,
-        section,
-        footer {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #eee;
-        }
-
-        h1 {
-            font-size: 30px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        h4 {
-            font-size: 17px;
-            font-weight: bold;
-            color: #5f5d5d;
-        }
-
-        .content h2 {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .content ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .testimonial {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f2f2f2;
-            border-radius: 4px;
-        }
-
-        .testimonial p:first-child {
-            margin-bottom: 10px;
-        }
-
-        .hidden {
-        display: none;
-        opacity: 0;
-        transition: opacity 1s ease;
-        }
-
-        .hidden {
-        display: none;
-        opacity: 0;
-        }
-
-        .visible {
-        display: block;
-        opacity: 1;
-        transition: opacity 1s ease;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            overflow: hidden;
-            margin: 0 auto;
-            max-width: 100%;
-        }
-
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .button {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-
-        .cta {
-            text-align: center;
-        }
-
-        .cta-bottom {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #eee;
-        }
-
-        .footer p {
-            font-size: 14px;
-            color: #777;
-        }
-
-        .faq-section {
-            text-align: center;
-            background-color: #f2f2f2;
-            padding: 40px 0;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq {
-            background-color: #eee;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .question {
-            padding: 20px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .answer {
-            padding: 20px;
-            display: none;
-        }
-
-        .faq.active .answer {
-            display: block;
-        }
-
-        .faq.active .question {
-            background-color: #ddd;
-        }
-
-        .faq .question::after {
-            content: "+";
-            float: right;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .faq.active .question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq:hover .question::after {
-            color: #007bff;
-        }
-
-        @media screen and (max-width: 768px) {
-            body,
-            header,
-            main,
-            section,
-            footer {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            h4 {
-                font-size: 14px;
-            }
-
-            .content h2 {
-                margin-top: 15px;
-                font-size: 20px;
-            }
-
-            .content ul {
-                margin-left: 15px;
-                margin-bottom: 15px;
-            }
-
-            .testimonial {
-                padding: 10px;
-            }
-
-            .testimonial p:first-child {
-                margin-bottom: 5px;
-            }
-
-            .video-container {
-                padding-bottom: 56.25%;
-            }
-
-            .button {
-                padding: 10px 20px;
-            }
-
-            .footer p {
-                font-size: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1 class="animate__animated animate__fadeIn">Título da Oferta</h1>
-        <h4 class="animate__animated animate__fadeIn">Subtítulo da Oferta</h4>
-    </header>
-
-    <main>
-        <section class="video">
-            <div class="video-container animate__animated animate__fadeIn">
-                <video id="salesVideo" src="VELOZES E FURIOSOS 10 _ Trailer Oficial (Universal Studios) - HD.mp4" controls autoplay muted></video>
-            </div>
-        </section>
-
-        <section class="cta" id="ctaAfterVideo">
-            <h2 class="animate__animated animate__fadeIn">Adquira Agora!</h2>
-            <p class="animate__animated animate__fadeIn">Descrição da oferta e chamada para ação.</p>
-            <a id="buyButtonLarge" href="" class="button animate__animated animate__fadeIn">Já quero comprar agora!</a>
-        </section>
-
-        <section class="content vsl-section hidden" id="contentAfterVideo">
-            <h2 class="benefits animate__animated animate__fadeIn animate__slow">Benefícios do Produto</h2>
-            <ul class="animate__animated animate__fadeIn animate__slow">
-                <li>Benefício 1</li>
-                <li>Benefício 2</li>
-                <li>Benefício 3</li>
-                <li>Benefício 4</li>
-            </ul>
-            </section>
-
-            <section class="content vsl-section hidden" id="contentAfterVideo2">
-            <div class="testimonial hidden animate__animated animate__fadeIn animate__slow">
-                <h2>Depoimentos</h2>
-                <p>"Depoimento 1"</p>
-                <p>- Nome do Cliente 1</p>
-            </div>
-            <div class="testimonial hidden animate__animated animate__fadeIn animate__slow">
-                <p>"Depoimento 2"</p>
-                <p>- Nome do Cliente 2</p>
-            </div>
-
-            <div class="faq-container hidden animate__animated animate__fadeIn animate__slow" id="faqSection">
-                <h2>Perguntas Frequentes</h2>
-                <div class="faq">
-                    <div class="question">Pergunta 1?</div>
-                    <div class="answer">Resposta 1!</div>
-                </div>
-                <div class="faq hidden">
-                    <div class="question">Pergunta 2?</div>
-                    <div class="answer">Resposta 2!</div>
-                </div>
-                <div class="faq hidden">
-                    <div class="question">Pergunta 3?</div>
-                    <div class="answer">Resposta 3!</div>
-                </div>
-            </div>
-
-            <div class="cta-bottom hidden animate__animated animate__fadeIn animate__slow" id="ctaBottom">
-                <a id="buyButtonSmall" href="" class="button animate__animated animate__fadeIn animate__slow">Comprar Agora!</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>© 2023 Nome da Empresa. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        const salesVideo = document.getElementById('salesVideo');
-        const ctaAfterVideo = document.getElementById('ctaAfterVideo');
-        const buyButtonLarge = document.getElementById('buyButtonLarge');
-        const contentAfterVideo = document.getElementById('contentAfterVideo');
-        const contentAfterVideo2 = document.getElementById('contentAfterVideo2');
-        const faqSection = document.getElementById('faqSection');
-        const ctaBottom = document.getElementById('ctaBottom');
-        const buyButtonSmall = document.getElementById('buyButtonSmall');
-
-        const testimonials = document.querySelectorAll('.testimonial');
-        const faqs = document.querySelectorAll('.faq');
-
-        let testimonialIndex = 0;
-        let faqIndex = 0;
-
-        function showNextTestimonial() {
-            if (testimonialIndex < testimonials.length) {
-                testimonials[testimonialIndex].classList.remove('hidden');
-                testimonials[testimonialIndex].classList.add('visible');
-                testimonialIndex++;
-            }
-        }
-
-        function showNextFAQ() {
-            if (faqIndex < faqs.length) {
-                faqs[faqIndex].classList.remove('hidden');
-                faqs[faqIndex].classList.add('visible');
-                faqIndex++;
-            }
-        }
-
-        salesVideo.addEventListener('timeupdate', function () {
-            const videoDuration = salesVideo.duration;
-            const videoCurrentTime = salesVideo.currentTime;
-
-            const halfVideoTime = videoDuration / 2;
-
-            // Exibir os elementos ocultos quando atingir a metade do vídeo
-            if (videoCurrentTime >= halfVideoTime) {
-                ctaAfterVideo.classList.remove('hidden');
-                ctaAfterVideo.classList.add('visible');
-                contentAfterVideo.classList.remove('hidden');
-                contentAfterVideo.classList.add('visible');
-            }
-
-            const testimonialInterval = videoDuration / (testimonials.length + 2);
-            const currentTestimonialIndex = Math.floor(videoCurrentTime / testimonialInterval);
-
-            if (currentTestimonialIndex > testimonialIndex) {
-                showNextTestimonial();
-            }
-
-            const faqInterval = videoDuration / (faqs.length + 2);
-            const currentFaqIndex = Math.floor(videoCurrentTime / faqInterval);
-
-            if (currentFaqIndex > faqIndex) {
-                showNextFAQ();
-            }
-
-            if (videoCurrentTime >= halfVideoTime + 25) {
-                contentAfterVideo2.classList.remove('hidden');
-                contentAfterVideo2.classList.add('visible');
-            }
-
-            if (videoCurrentTime >= halfVideoTime + 50) {
-                faqSection.classList.remove('hidden');
-                faqSection.classList.add('visible');
-            }
-
-            if (videoCurrentTime >= halfVideoTime + 75) {
-                ctaBottom.classList.remove('hidden');
-                ctaBottom.classList.add('visible');
-            }
-        });
-
-        buyButtonLarge.addEventListener('click', function (event) {
-            event.preventDefault();
-            console.log('Buy button large clicked');
-        });
-
-        buyButtonSmall.addEventListener('click', function (event) {
-            event.preventDefault();
-            console.log('Buy button small clicked');
-        });
+<body style="background-color: rgb(0, 0, 0);">
+    <div align="center">
+  
+    <div class="division-SSXCWS8199179__wrapper">
+      
+<style>
+  #division-SSXCWS8199179 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 1vh 20vw 5vh 20vw;
+    background-color: #000000;
+    
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("adestrar.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         
-        // Função para abrir ou fechar a caixa de perguntas
-function toggleFAQ(faq) {
-    const question = faq.querySelector('.question');
-    const answer = faq.querySelector('.answer');
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-SSXCWS8199179 {
+      padding: 0.75vh 15vw 3.75vh 15vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-SSXCWS8199179 {
+      margin: 0;
+      padding: 0.75vh 3vw 3.75vh 2.25vw;
+      
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://img.imageboss.me/atm/cdn/u/x8zvExYXS6Yr9EABVpYNrPmVh4f1/l/hBIMxl1544416.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          
+          
+    }
+  }
+</style>
+<div id="division-SSXCWS8199179" class="FdcQQp4698314">
 
-    faq.classList.toggle('active');
-    answer.classList.toggle('visible');
-}
+<div class="headline-XSemEB8199179"> 
+<style>
+  .headline-XSemEB8199179-element h1 {
+    font-size: 2.64vw;
+    font-family: 
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 800;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-XSemEB8199179-element h1 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 3vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-XSemEB8199179-element h1 {
+      font-size: 5.60vw;
+      padding-top: 1.5vh;
+      padding-bottom: 3vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-XSemEB8199179-element headline">
+  <h1>
+    Descubra uma forma&nbsp;<span style="color:#0099ff">inovadora</span>&nbsp;<br>para adestrar seu cão em&nbsp;<span style="color:#0099ff">14 dias</span>&nbsp;
+  </h1>
+</div>
+</div>
 
-// Adiciona o evento de clique em cada pergunta
-faqs.forEach(function (faq) {
-    const question = faq.querySelector('.question');
+<div id="vp_" class="video-1658581462028Iuugbk">
+  <div class="video-1658581462028Iuugbk-element video-placeholder">
+    <video controls width="100%">
+        <source src="VELOZES E FURIOSOS 10 _ Trailer Oficial (Universal Studios) - HD.mp4" type="video/mp4">
+      </video>
+  </div>
+</div>
+<div id="_vp"></div>
 
-    question.addEventListener('click', function () {
-        toggleFAQ(faq);
-    });
-});
-    </script>
-</body>
+<div class="button-FiFXIs8199179 delayed-on-section">
+<style>
+  
+          .pulsing_FiFXIs8199179 {
+              animation-name: pulsing_FiFXIs8199179;
+              animation-duration: 1s;
+              animation-timing-function: ease-out;
+              animation-iteration-count: infinite;
+          }
+          @keyframes pulsing_FiFXIs8199179 {
+              0% {
+                  box-shadow: 0 0 0 0 #0099ff
+              }
+          
+              80% {
+                  box-shadow: 0 0 0 12px #ffff0000
+              }
+          }
+      
+  a.button-FiFXIs8199179-element {
+    background-color: #0099ff;
+    border-radius: 4px;
+    border: none;
+    color: #ffff;
+    padding: 16px 32px 16px 32px;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 4vh auto 2vh auto;
+    font-size: 1.49vw;
+    box-sizing: border-box;
+    max-width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  a.button-FiFXIs8199179-element:hover {
+    filter: brightness(1.2);
+  }
+  @media (max-width: 1200px) {
+    a.button-FiFXIs8199179-element {
+      font-size: 1.69vw;
+      margin: 2.64vh auto 1.5vh auto;
+      padding: 8px 16px 8px 16px;
+    }
+  }
+  @media (max-width: 640px) {
+    a.button-FiFXIs8199179-element {
+      font-size: 3.94vw;
+      padding: 12px 24px 12px 24px;
+      margin: 2vh auto 1vh auto;
+    }
+  }
+</style>
+<a href="#" target="_blank" class="btn button-FiFXIs8199179-element  pulsing_FiFXIs8199179">
+  Já quero comprar AGORA!
+</a>
+</div>
+</div>
+
+    </div>
+
+    <div class="division-IXYbRJ5780194__wrapper">
+      
+<style>
+  #division-IXYbRJ5780194 {
+    border: none;
+    margin: 0;
+    position: relative;
+    padding: 20vh 10vw 5vh 10vw;
+    background-color: #000000;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-IXYbRJ5780194 {
+      padding: 15vh 7.5vw 3.75vh 7.5vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-IXYbRJ5780194 {
+      margin: 0;
+      padding: 3.75vh 1.5vw 0.001vh 1.5vw;
+      
+    }
+  }
+</style>
+<div id="division-IXYbRJ5780194" class="tMIwbj4698317">
+
+<div class="headline-PwRNMG5780194"> 
+<style>
+  .headline-PwRNMG5780194-element h1 {
+    font-size: 3.30vw;
+    text-align: left;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 500;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-PwRNMG5780194-element h1 {
+      font-size: 3.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-PwRNMG5780194-element h1 {
+      font-size: 7.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-PwRNMG5780194-element headline">
+  <h1>
+    <span style="color:#0099ff">―</span>&nbsp;Nosso produto:
+  </h1>
+</div>
+</div>
+
+<div class="description-LLMnLg5780194"> 
+<style>
+  .description-LLMnLg5780194-element h3 {
+    font-size: 1.32vw;
+    text-align: left;
+    padding-top: 2vh;
+    padding-bottom: 0vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  @media (max-width: 1200px) {
+    .description-LLMnLg5780194-element h3 {
+      font-size: 1.80vw;
+      padding-top: 1.5vh;
+      padding-bottom: 0vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-LLMnLg5780194-element h3 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 0vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-LLMnLg5780194-element undefined">
+  <h3>
+    Saiba os pontos cruciais abordados pelo melhor infoproduto de adestramento canino!
+  </h3>
+</div>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-DhIkDL8919390__wrapper">
+      
+<style>
+  #division-DhIkDL8919390 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 20vh 10vw 20vh 10vw;
+    background-color: #000000;
+    
+        
+        
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-DhIkDL8919390 {
+      padding: 15vh 7.5vw 15vh 7.5vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-DhIkDL8919390 {
+      margin: 0;
+      padding: 11.25vh 1.5vw 11.25vh 1.5vw;      
+          
+    }
+  }
+</style>
+<div id="division-DhIkDL8919390" class="zaBJAE4698318 grid grid-cols-3 sm:grid-cols-3 items-center gap-2 sm:gap-2">
+
+<div class="description-fbiAem8919390"> 
+<style>
+  .description-fbiAem8919390-element h3 {
+    font-size: 1.65vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-fbiAem8919390-element h3 {
+      font-size: 2.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-fbiAem8919390-element h3 {
+      font-size: 4.38vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-fbiAem8919390-element undefined">
+  <h3>
+    <span style="color:#0099ff">➊</span>&nbsp;<br><br><b>Descrição 1</b><br><span style="color:#0099ff">―</span><br><br>Aumente suas vendas com páginas de alta conversão e <br>ultra velocidade.
+  </h3>
+</div>
+</div>
+
+<div class="description-IjwoWy9322935"> 
+<style>
+  .description-IjwoWy9322935-element h3 {
+    font-size: 1.65vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-IjwoWy9322935-element h3 {
+      font-size: 2.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-IjwoWy9322935-element h3 {
+      font-size: 4.38vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-IjwoWy9322935-element undefined">
+  <h3>
+    <span style="color:#0099ff">➋</span><br><br><b>Descrição 2</b><br><span style="color:#0099ff">―</span><br><br>Aumente suas vendas com páginas de alta conversão e <br>ultra velocidade.
+  </h3>
+</div>
+</div>
+
+<div class="description-YyfgXb9328493"> 
+<style>
+  .description-YyfgXb9328493-element h3 {
+    font-size: 1.65vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-YyfgXb9328493-element h3 {
+      font-size: 2.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-YyfgXb9328493-element h3 {
+      font-size: 4.38vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-YyfgXb9328493-element undefined">
+  <h3>
+    <span style="color:#0099ff">➌</span><br><br><b>Descrição 3</b><br><span style="color:#0099ff">―</span><br><br>Aumente suas vendas com páginas de alta conversão e <br>ultra velocidade.
+  </h3>
+</div>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-YoAvYF5622460__wrapper">
+      
+<style>
+  #division-YoAvYF5622460 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 3vh 10vw 3vh 10vw;
+    background-color: #000000;
+    
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("adestramento3.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-YoAvYF5622460 {
+      padding: 2.25vh 7.5vw 2.25vh 7.5vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-YoAvYF5622460 {
+      margin: 0;
+      padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+      
+          background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("adestramento3.jpg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          
+          
+    }
+  }
+</style>
+<div id="division-YoAvYF5622460" class="pbPByH4698318 grid grid-cols-1 sm:grid-cols-1 items-center gap-2 sm:gap-2">
+
+<div class="headline-16601488656872jm22E"> 
+<style>
+  .headline-16601488656872jm22E-element h1 {
+    font-size: 2.31vw;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 700;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-16601488656872jm22E-element h1 {
+      font-size: 2.80vw;
+      padding-top: 0.75vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-16601488656872jm22E-element h1 {
+      font-size: 5.60vw;
+      padding-top: 0.75vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-16601488656872jm22E-element headline">
+  <h1>
+    O que o Guia Definitivo para Adestramento Canino faz?
+  </h1>
+</div>
+</div>
+
+<div class="description-16601489340851FSaud"> 
+<style>
+  .description-16601489340851FSaud-element h3 {
+    font-size: 1.32vw;
+    text-align: center;
+    padding-top: 4vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-16601489340851FSaud-element h3 {
+      font-size: 1.80vw;
+      padding-top: 3vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-16601489340851FSaud-element h3 {
+      font-size: 4.00vw;
+      padding-top: 3vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-16601489340851FSaud-element ">
+  <h3>
+    <span style="color:#0099ff">✔</span>&nbsp;Benefício 1<br><br><span style="color:#0099ff">✔</span>&nbsp;Benefício 2<br><br><span style="color:#0099ff">✔</span>&nbsp;Benefício 3<br><br><span style="color:#0099ff">✔</span>&nbsp;Benefício 4
+  </h3>
+</div>
+</div>
+
+<div class="headline-hWxJJI5622460"> 
+<style>
+  .headline-hWxJJI5622460-element h1 {
+    font-size: 3.30vw;
+    text-align: center;
+    padding-top: 15vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 500;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-hWxJJI5622460-element h1 {
+      font-size: 3.50vw;
+      padding-top: 11.25vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-hWxJJI5622460-element h1 {
+      font-size: 7.50vw;
+      padding-top: 11.25vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-hWxJJI5622460-element headline">
+  <h1>
+    Quer deixar seu cãozinho obediente?
+  </h1>
+</div>
+</div>
+
+<div class="subheadline-vfbPxt5622460"> 
+<style>
+  .subheadline-vfbPxt5622460-element h2 {
+    font-size: 1.32vw;
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .subheadline-vfbPxt5622460-element h2 {
+      font-size: 1.80vw;
+      padding-top: 3.75vh;
+      padding-bottom: 3.75vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .subheadline-vfbPxt5622460-element h2 {
+      font-size: 4.00vw;
+      padding-top: 3.75vh;
+      padding-bottom: 3.75vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="subheadline-vfbPxt5622460-element subheadline">
+  <h2>
+    Descrição extra com ressalvas importantes sobre alguns módulos do livro para que o cliente <br> sinta-se atraído
+    e identifique-se com o produto de acordo com sua necessidade
+  </h2>
+</div>
+</div>
+
+<div class="button-cLrafn5622460">
+<style>
+  
+          .pulsing_cLrafn5622460 {
+              animation-name: pulsing_cLrafn5622460;
+              animation-duration: 1s;
+              animation-timing-function: ease-out;
+              animation-iteration-count: infinite;
+          }
+          @keyframes pulsing_cLrafn5622460 {
+              0% {
+                  box-shadow: 0 0 0 0 #0099ff
+              }
+          
+              80% {
+                  box-shadow: 0 0 0 12px #ffff0000
+              }
+          }
+      
+  a.button-cLrafn5622460-element {
+    background-color: #0099ff;
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    padding: 16px 32px 16px 32px;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 5vh auto 10vh auto;
+    font-size: 1.49vw;
+    box-sizing: border-box;
+    max-width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  a.button-cLrafn5622460-element:hover {
+    filter: brightness(1.2);
+  }
+  @media (max-width: 1200px) {
+    a.button-cLrafn5622460-element {
+      font-size: 1.69vw;
+      margin: 3.3000000000000003vh auto 7.5vh auto;
+      padding: 8px 16px 8px 16px;
+    }
+  }
+  @media (max-width: 640px) {
+    a.button-cLrafn5622460-element {
+      font-size: 3.94vw;
+      padding: 12px 24px 12px 24px;
+      margin: 2.5vh auto 5vh auto;
+    }
+  }
+</style>
+<a href="#" target="_blank" class="btn button-cLrafn5622460-element  pulsing_cLrafn5622460">
+  Sim, me dê logo o produto!
+</a>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-vvLRmj7875632__wrapper">
+      
+<style>
+  #division-vvLRmj7875632 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 3vh 10vw 3vh 10vw;
+    background-color: #000000;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-vvLRmj7875632 {
+      padding: 2.25vh 7.5vw 2.25vh 7.5vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-vvLRmj7875632 {
+      margin: 0;
+      padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+      
+    }
+  }
+</style>
+<div id="division-vvLRmj7875632" class="LJahDt4698319">
+
+<div class="headline-yFIQGL4273811"> 
+<style>
+  .headline-yFIQGL4273811-element h1 {
+    font-size: 3.30vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 10vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 500;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-yFIQGL4273811-element h1 {
+      font-size: 3.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 7.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-yFIQGL4273811-element h1 {
+      font-size: 7.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 7.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-yFIQGL4273811-element headline">
+  <h1>
+    <span style="color:#0099ff">│</span>
+  </h1>
+</div>
+</div>
+
+<div class="headline-PJgoRw7909336"> 
+<style>
+  .headline-PJgoRw7909336-element h1 {
+    font-size: 3.30vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 500;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-PJgoRw7909336-element h1 {
+      font-size: 3.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-PJgoRw7909336-element h1 {
+      font-size: 7.50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-PJgoRw7909336-element headline">
+  <h1>
+    <span style="color:#0099ff">―</span>&nbsp;O que nossos clientes dizem:
+  </h1>
+</div>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-1660149295487__wrapper">
+      
+<style>
+  #division-1660149295487 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 2vh 20vw 2vh 20vw;
+    background-color: #000000;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-1660149295487 {
+      padding: 1.5vh 15vw 1.5vh 15vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-1660149295487 {
+      margin: 0;
+      padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+      
+    }
+  }
+</style>
+
+
+<div class="description-pBMrqu2799124"> 
+<style>
+  .description-pBMrqu2799124-element h3 {
+    font-size: 1.32vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-pBMrqu2799124-element h3 {
+      font-size: 1.80vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-pBMrqu2799124-element h3 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-pBMrqu2799124-element undefined">
+  <h3>
+    ❞<br><span style="color:#fec42d">★★★★★</span><br><b>Nome do aluno</b>
+  </h3>
+</div>
+</div>
+
+<div class="description-pbSBFf2799124"> 
+<style>
+  .description-pbSBFf2799124-element h3 {
+    font-size: 1.32vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-pbSBFf2799124-element h3 {
+      font-size: 1.80vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-pbSBFf2799124-element h3 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-pbSBFf2799124-element undefined">
+  <h3>
+    ❞<br><span style="color:#fec42d">★★★★★</span><br><b>Nome do aluno</b>
+  </h3>
+</div>
+</div>
+
+<div class="description-jEwpQA5023401"> 
+<style>
+  .description-jEwpQA5023401-element h3 {
+    font-size: 1.32vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-jEwpQA5023401-element h3 {
+      font-size: 1.80vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-jEwpQA5023401-element h3 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-jEwpQA5023401-element undefined">
+  <h3>
+    ❞<br><span style="color:#fec42d">★★★★★</span><br><b>Nome do aluno</b>
+  </h3>
+</div>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-zcKNny8170718__wrapper">
+      
+<style>
+  #division-zcKNny8170718 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 3vh 20vw 3vh 20vw;
+    background-color: #0d0d0d;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-zcKNny8170718 {
+      padding: 2.25vh 15vw 2.25vh 15vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-zcKNny8170718 {
+      margin: 0;
+      padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+      
+    }
+  }
+</style>
+<div id="division-zcKNny8170718" class="fMliSa4698321">
+
+<div class="headline-wpxINH8185356"> 
+<style>
+  .headline-wpxINH8185356-element h1 {
+    font-size: 2.64vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #ffffff;
+    line-height: 1.3;
+    font-weight: 800;
+    false
+  }
+  @media (max-width: 1200px) {
+    .headline-wpxINH8185356-element h1 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline-wpxINH8185356-element h1 {
+      font-size: 5.60vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="headline-wpxINH8185356-element headline">
+  <h1>
+    GARANTIA<br><span style="background-color:#0099ff"><span style="color:#000000">&nbsp;INCONDICIONAL&nbsp;</span></span>
+  </h1>
+</div>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-1660149539573__wrapper">
+      
+<style>
+  #division-1660149539573 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 2vh 20vw 3vh 20vw;
+    background-color: #0d0d0d;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-1660149539573 {
+      padding: 1.5vh 15vw 2.25vh 15vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-1660149539573 {
+      margin: 0;
+      padding: 3vh 1.5vw 1.5vh 1.5vw;
+      
+    }
+  }
+</style>
+<div id="division-1660149539573" class="exadXl4698322 grid grid-cols-1 sm:grid-cols-2 items-center gap-2 sm:gap-2">
+
+<div class="image-1660149712911jp7BHR"> 
+<style>
+  .image-1660149712911jp7BHR-element img {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.25vh;
+    margin-top: 0.25vh;
+    max-width: 80%;
+    border-radius: 0;
+    border: none;
+  }
+  @media (max-width: 1200px) {
+    .image-1660149712911jp7BHR-element img {
+      max-width: 72%;
+    }
+  }
+  @media (max-width: 600px) {
+    .image-1660149712911jp7BHR-element img {
+      max-width: 60%;
+      margin-left:auto;margin-right:auto;
+    }
+  }
+</style>
+<div class="image-1660149712911jp7BHR-element">
+  <a class="image_1660149712911jp7BHR img_blank target-img-url" href="" style="display:none"></a>
+  <img loading="lazy" src="https://img.imageboss.me/atm/cdn/p/h/h4.png" alt="">
+</div>
+</div>
+
+<div class="description-1660149718399c1FuYM"> 
+<style>
+  .description-1660149718399c1FuYM-element h3 {
+    font-size: 1.32vw;
+    text-align: left;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 400;
+    false
+  }
+  @media (max-width: 1200px) {
+    .description-1660149718399c1FuYM-element h3 {
+      font-size: 1.80vw;
+      padding-top: 1.5vh;
+      padding-bottom: 0.75vh;
+    }
+  }
+  @media (max-width: 640px) {
+    .description-1660149718399c1FuYM-element h3 {
+      font-size: 4.00vw;
+      padding-top: 1.5vh;
+      padding-bottom: 0.75vh;
+      text-align: center;
+    }
+  }
+</style>
+<div class="description-1660149718399c1FuYM-element ">
+  <h3>
+    Talvez você esteja inseguro...<br><br>Por isso iremos te oferecer&nbsp;<span style="color:#0099ff"><b>7 DIAS DE GARANTIA INCONDICIONAL</b></span><br><br>Se por algum motivo você não gostar do produto, nós devolveremos&nbsp;<span style="color:#0099ff"><b>TODO SEU DINHEIRO</b></span><br><br>Agora ficou mais fácil de tomar a decisão, não é?
+  </h3>
+</div>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-1660150149940__wrapper">
+      
+<style>
+  #division-1660150149940 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 1vh 20vw 3vh 20vw;
+    background-color: #0d0d0d;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-1660150149940 {
+      padding: 0.75vh 15vw 2.25vh 15vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-1660150149940 {
+      margin: 0;
+      padding: 0.75vh 1.5vw 1.5vh 1.5vw;
+      
+    }
+  }
+</style>
+<div id="division-1660150149940" class="fyRnFR4698323">
+
+<div class="button-ciChvQ3950990 delayed-on-section">
+<style>
+  
+          .pulsing_ciChvQ3950990 {
+              animation-name: pulsing_ciChvQ3950990;
+              animation-duration: 1s;
+              animation-timing-function: ease-out;
+              animation-iteration-count: infinite;
+          }
+          @keyframes pulsing_ciChvQ3950990 {
+              0% {
+                  box-shadow: 0 0 0 0 #0099ff
+              }
+          
+              80% {
+                  box-shadow: 0 0 0 12px #FFFF0000
+              }
+          }
+      
+  a.button-ciChvQ3950990-element {
+    background-color: #0099ff;
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    padding: 16px 32px 16px 32px;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 5vh auto 10vh auto;
+    font-size: 1.49vw;
+    box-sizing: border-box;
+    max-width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  a.button-ciChvQ3950990-element:hover {
+    filter: brightness(1.2);
+  }
+  @media (max-width: 1200px) {
+    a.button-ciChvQ3950990-element {
+      font-size: 1.69vw;
+      margin: 3.3000000000000003vh auto 7.5vh auto;
+      padding: 8px 16px 8px 16px;
+    }
+  }
+  @media (max-width: 640px) {
+    a.button-ciChvQ3950990-element {
+      font-size: 3.94vw;
+      padding: 12px 24px 12px 24px;
+      margin: 2.5vh auto 5vh auto;
+    }
+  }
+</style>
+<a href="#" target="_blank" class="btn button-ciChvQ3950990-element  pulsing_ciChvQ3950990">
+  Comprar
+</a>
+</div>
+</div>
+
+    </div>
+  
+    <div class="division-yBeqqM3104098__wrapper">
+      
+<style>
+  #division-yBeqqM3104098 {
+    border: none;
+    border-radius: undefined;
+    margin: 0;
+    position: relative;
+    padding: 5vh 20vw 5vh 20vw;
+    background-color: #000000;
+    
+    
+    
+  }
+  @media (max-width:1200px) {
+    #division-yBeqqM3104098 {
+      padding: 3.75vh 15vw 3.75vh 15vw;
+      margin: 0;
+    }
+  }
+  @media (max-width:600px) {
+    #division-yBeqqM3104098 {
+      margin: 0;
+      padding: 3.75vh 1.5vw 3.75vh 1.5vw;
+      
+    }
+  }
+</style>
+<div id="division-yBeqqM3104098" class="JBwWFz4698324">
+
+<div class="footer-pBmpic3094525">
+<style>
+  .footer-pBmpic3094525-element {
+    text-align: center;
+    font-size: 1.20vw;
+    color: #f0f0f0;
+  }
+  .footer-pBmpic3094525-element a {
+    padding: 0 !important;
+    color: #f0f0f0 !important;
+  }
+  @media (max-width:1200px) {
+    .footer-pBmpic3094525-element {
+      text-align: center;
+      font-size: 1.95vw;
+      color: #f0f0f0;
+    }
+  }
+  @media (max-width:640px) {
+    .footer-pBmpic3094525-element {
+      text-align: center;
+      font-size: 3.30vw;
+      color: #f0f0f0;
+    }
+  }
+</style>
+<footer class="footer-pBmpic3094525-element">
+  <p><strong>Copyright 2023 – Nome do Produto ®</strong></p>
+  <p style="margin-top:4px;">Todos os Direitos Reservados</p>
+  <div style="display:flex;align-items:center;justify-content:center;margin-top:24px;">
+    <a id="t" style="margin-right:12px" href="#" target="_blank">
+      Termos de Uso
+    </a> <span style="margin-right:12px">·</span>
+    <a id="p" href="#" target="_blank">
+      Privacidade
+    </a>
+  </div>
+  <script>
+    const pr = window.location.href + "/privacidade",
+      te = window.location.href + "/termos";
+      document.getElementById("p").setAttribute("href", pr), document.getElementById("t").setAttribute("href", te);
+  </script>
+</footer></div>
+
+</div>
+
+    </div>
+</div>
+  </body>
 </html>
