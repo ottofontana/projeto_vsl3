@@ -91,7 +91,7 @@ body {
 .gap-2 {
     gap: 8px;
 }
-<style>
+
 .grid {
     display: grid;
 }
@@ -101,4 +101,9 @@ body {
 
 .items-center {
     align-items: center;
+}
+
+#livro{
+    align-items: center;
+    margin-right: 350px;
 }
