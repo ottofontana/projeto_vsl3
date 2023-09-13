@@ -93,7 +93,7 @@ nav ul li a:hover {
 
 
 #slide2 {
-    background-image: url("brawn2.png");
+    background-image: url("sobre1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -101,21 +101,21 @@ nav ul li a:hover {
 }
 
 #slide3{
-    background-image: url("grindor2.png");
+    background-image: url("sobre2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 #slide4 {
-    background-image: url("diamond.png");
+    background-image: url("sobre4.png");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
 }
 
 #slide5{
-    background-image: url("wheeljack.png");
+    background-image: url("sobre3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -271,7 +271,7 @@ p {
 }
 
 .card1 {
-    background-image: linear-gradient(rgba(43, 43, 43, 0.7), rgba(43, 43, 43, 0.7)), url(brawn2.png);
+    background-image: linear-gradient(rgba(43, 43, 43, 0.7), rgba(43, 43, 43, 0.7)), url(brawn.png);
 }
 
 .card2 {
