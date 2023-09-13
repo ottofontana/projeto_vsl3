@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo_contato.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="index.html"><img src="redragon-logo.png" class="logo"></a>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="modelos.html">Modelo</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <img src="redragon-mini.png" class="icone" onclick="togglemenu()">
+        </div>
+    </div>
+    <div class="contact-section">
+        <h1>Contate-nos</h1>
+        <form class="contact-form" action="contato.html" method="post">
+            <input type="text" required ="required" class="contact-form-text" placeholder="Nome">
+            <input type="text" required ="required" class="contact-form-text" placeholder="email">
+            <input type="text" required ="required" class="contact-form-text" placeholder="Telefone">
+            <textarea class="contact-form-text" placeholder="Deixe seu comentário!"></textarea>
+            <input type="submit" class="contact-form-btn" value="Enviar">
+        </form>
+    </div>
+    <div class="redes-sociais">
+        <a href="#"><i class='bx bxl-youtube'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-tiktok'></i></a>
+    </div>
+
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "130px";
+            }
+            else
+            {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>
