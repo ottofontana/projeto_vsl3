@@ -135,6 +135,48 @@ nav ul li a:hover {
     background-position: center;
 }
 
+#slide_ingles2 {
+    background-image: url("sobre_ingles1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#slide_ingles3 {
+    background-image: url("sobre_ingles2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#slide_ingles4 {
+    background-image: url("sobre_ingles3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#slide_ingles5 {
+    background-image: url("sobre_ingles4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#slide_ingles6 {
+    background-image: url("sobre_ingles5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#slide_ingles7 {
+    background-image: url("sobre_ingles6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .parallax-container {
     position: relative;
     width: 100%;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Our Products</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="estilo_sobre.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="index_ingles.html"><img src="redragon-logo.png" class="logo" alt="Redragon Logo"></a>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="sobre.html"><img src="brasil.png" width="10%"></a></li>
+                    <li><a href="index_ingles.html">Home</a></li>
+                    <li><a href="sobre_ingles.html">About</a></li>
+                    <li><a href="modelos_ingles.html">Models</a></li>
+                    <li><a href="contato_ingles.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <img src="redragon-mini.png" class="icone" onclick="togglemenu()">
+        </div>
+    </div>
+
+    
+    <div class="parallax-container" id="title">
+        <div class="content" id="inicio">
+            <h1>Main Advantages of Our Products</h1>
+            <p>All our cases have differentials that make them unique in the market, however, so that our customers can have 
+            the best possible experience with our products, we have benefits that we do not give up to include in any product. Check them out below!</p>
+            <a href="#slide2"><button type="button">See More!</button></a>
+        </div>
+    </div>
+
+    <div class="parallax-container" id="slide_ingles2">
+    </div>
+
+    <div class="parallax-container" id="slide_ingles3">
+    </div>
+
+    <div class="parallax-container" id="slide_ingles4">
+    </div>
+
+    <div class="parallax-container" id="slide_ingles5">
+    </div>
+
+    <div class="parallax-container" id="slide_ingles6">
+    </div>
+
+    <div class="parallax-container" id="slide_ingles7">
+    </div>
+
+    <footer><b>Paulo Junior 2023 - &copyAll rights reserved<br>ACADEMIC WORK - NOT FOR PROFIT</b><div align="right"> <a href="#title" class="voltar"><img src="seta.png" width="3%"> </a></div></footer>
+
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "130px";
+            }
+            else
+            {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>
